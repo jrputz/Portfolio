@@ -21,6 +21,7 @@ import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.js
 import ProductSection from "./Sections/ProductSection.jsx";
 import TeamSection from "./Sections/TeamSection.jsx";
 import WorkSection from "./Sections/WorkSection.jsx";
+import HeaderLinks2 from "../../components/Header/HeaderLinks2.jsx";
 
 const dashboardRoutes = [];
 
@@ -30,39 +31,27 @@ class LandingPage extends React.Component {
     return (
       <div>
         <Header
-          color="transparent"
-          routes={dashboardRoutes}
-          brand="Material Kit React"
+          brand=""
+          leftLinks={<HeaderLinks2 />}
           rightLinks={<HeaderLinks />}
           fixed
+          color="transparent"
           changeColorOnScroll={{
             height: 400,
-            color: "white"
+            color: "rgba(0,0,0, 0.1)"
           }}
           {...rest}
         />
-        <Parallax filter image={require("assets/img/landing-bg.jpg")}>
+        <Parallax image={require("assets/img/bg5.jpg")}>
           <div className={classes.container}>
             <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <h1 className={classes.title}>Your Story Starts With Us.</h1>
-                <h4>
-                  Every landing page needs a small description after the big
-                  bold title, that's why we added this text here. Add here all
-                  the information that can make you or your product create the
-                  first impression.
-                </h4>
-                <br />
-                <Button
-                  color="danger"
-                  size="lg"
-                  href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fas fa-play" />
-                  Watch video
-                </Button>
+              <GridItem>
+                <div className={classes.brand}>
+                  <h1 className={classes.title}>Welcome.</h1>
+                  <h3 className={classes.subtitle}>
+                    Lets make some websites together.
+                  </h3>
+                </div>
               </GridItem>
             </GridContainer>
           </div>
