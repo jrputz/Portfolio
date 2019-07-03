@@ -19,7 +19,7 @@ import homePageStyle from "assets/jss/material-kit-react/views/homePage.jsx";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.jsx";
-import TeamSection from "./Sections/TeamSection.jsx";
+import AboutSection from "./Sections/AboutSection.jsx";
 import WorkSection from "./Sections/WorkSection.jsx";
 
 const dashboardRoutes = [];
@@ -57,7 +57,7 @@ class HomePage extends React.Component {
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <TeamSection />
+            <AboutSection />
             <WorkSection />
           </div>
         </div>
