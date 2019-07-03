@@ -5,43 +5,39 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-
 // @material-ui/icons
 
 // core components
 import Header from "components/Header/Header.jsx";
-import Footer from "components/Footer/Footer.jsx";
+import NavigationLinks from "components/Header/NavigationLinks.jsx";
+import SocialLinks from "components/Header/SocialLinks.jsx";
+import Parallax from "components/Parallax/Parallax.jsx";
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import Button from "components/CustomButtons/Button.jsx";
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
-import HeaderLinks2 from "../../components/Header/HeaderLinks2.jsx";
-import Parallax from "components/Parallax/Parallax.jsx";
 
-import landingPageStyle from "assets/jss/material-kit-react/views/landingPage.jsx";
+import homePageStyle from "assets/jss/material-kit-react/views/homePage.jsx";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.jsx";
 import TeamSection from "./Sections/TeamSection.jsx";
 import WorkSection from "./Sections/WorkSection.jsx";
 
-
 const dashboardRoutes = [];
 
-class LandingPage extends React.Component {
+class HomePage extends React.Component {
   render() {
     const { classes, ...rest } = this.props;
     return (
       <div>
         <Header
           brand=""
-          leftLinks={<HeaderLinks2 />}
-          rightLinks={<HeaderLinks />}
+          leftLinks={<NavigationLinks />}
+          rightLinks={<SocialLinks />}
           fixed
           color="transparent"
           changeColorOnScroll={{
             height: 400,
-            color: "rgba(0,0,0, 0.1)"
+            color: "dark"
           }}
           {...rest}
         />
@@ -61,15 +57,13 @@ class LandingPage extends React.Component {
         </Parallax>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <ProductSection />
             <TeamSection />
             <WorkSection />
           </div>
         </div>
-        <Footer />
       </div>
     );
   }
 }
 
-export default withStyles(landingPageStyle)(LandingPage);
+export default withStyles(homePageStyle)(HomePage);
